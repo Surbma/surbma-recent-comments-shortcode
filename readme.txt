@@ -4,7 +4,7 @@ Donate link: http://surbma.com/
 Tags: jetpack
 Requires at least: 3.0
 Tested up to: 4.1
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -48,6 +48,11 @@ Because you have to enable this function. By default, Wordpress does not allow y
 It is the reverse version of my last name. ;)
 
 == Changelog ==
+
+= 1.0.1 =
+
+- Fix localization.
+- Prevent direct access to the plugin.
 
 = 1.0.0 =
 
