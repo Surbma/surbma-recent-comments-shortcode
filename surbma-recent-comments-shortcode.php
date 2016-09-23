@@ -5,7 +5,7 @@ Plugin Name: Surbma - Recent Comments Shortcode
 Plugin URI: http://surbma.com/wordpress-plugins/
 Description: A simple shortcode to display recent comments.
 
-Version: 1.0.1
+Version: 1.1.0
 
 Author: Surbma
 Author URI: http://surbma.com/
@@ -17,18 +17,17 @@ Domain Path: /languages/
 */
 
 // Prevent direct access to the plugin
-if ( !defined( 'ABSPATH' ) ) {
-	die( 'Good try! :)' );
-}
+if ( !defined( 'ABSPATH' ) ) exit( 'Good try! :)' );
 
 // Localization
 function surbma_recent_comments_shortcode_init() {
-	load_plugin_textdomain( 'surbma-recent-comments-shortcode', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+	load_plugin_textdomain( 'surbma-recent-comments-shortcode', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
 }
 add_action( 'plugins_loaded', 'surbma_recent_comments_shortcode_init' );
 
 function surbma_recent_comments_shortcode_shortcode( $atts ) {
 	extract( shortcode_atts( array(
+		'author__not_in' => '',
 		'number' => '5',
 		'order' => 'DESC',
 		'author' => 'show',
@@ -38,6 +37,7 @@ function surbma_recent_comments_shortcode_shortcode( $atts ) {
 	), $atts ) );
 
 	$args = array(
+		'author__not_in' => $author__not_in,
 		'number' => $number,
 		'order' => $order,
 		'status' => 'approve'
@@ -69,4 +69,3 @@ function surbma_recent_comments_shortcode_shortcode( $atts ) {
 	return $content;
 }
 add_shortcode( 'recent-comments', 'surbma_recent_comments_shortcode_shortcode' );
-

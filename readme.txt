@@ -1,10 +1,10 @@
 === Surbma - Recent Comments Shortcode ===
 Contributors: Surbma
 Donate link: http://surbma.com/
-Tags: jetpack
+Tags: comments, recent comments, shortcode
 Requires at least: 3.0
-Tested up to: 4.1
-Stable tag: 1.0.1
+Tested up to: 4.6
+Stable tag: 1.1.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,14 +18,15 @@ The shortcode:
 `[recent-comments]`
 `[recent-comments number="10" author="" title=""]`
 
-There are six parameters for this shortcode:
+There are seven parameters for this shortcode:
 
-1. number - Number of comments to return. Leave blank to return all comments. Default: 5
-2. order - How to sort comments: 'ASC' (Ascending - lowest to highest) or 'DESC' (Descending - highest to lowest). Default: DESC
-3. author - Do you want to hide the author? Just give an empty parameter: author=""
-4. title - Do you want to hide the title? Just give an empty parameter: title=""
-5. excerpt - Do you want to hide the excerpt? Just give an empty parameter: excerpt=""
-6. morelink - You can specify the text of the more link. Do you want to hide the more link? Just give an empty parameter: morelink=""
+1. author__not_in - Author ID to exclude from the list. Default: NULL to list all comments from all authors.
+2. number - Number of comments to return. Leave blank to return all comments. Default: 5
+3. order - How to sort comments: 'ASC' (Ascending - lowest to highest) or 'DESC' (Descending - highest to lowest). Default: DESC
+4. author - Do you want to hide the author? Just give an empty parameter: author=""
+5. title - Do you want to hide the title? Just give an empty parameter: title=""
+6. excerpt - Do you want to hide the excerpt? Just give an empty parameter: excerpt=""
+7. morelink - You can specify the text of the more link. Do you want to hide the more link? Just give an empty parameter: morelink=""
 
 There is no mandatory parameter, you can use the shortcode as is.
 
@@ -48,6 +49,14 @@ Because you have to enable this function. By default, Wordpress does not allow y
 It is the reverse version of my last name. ;)
 
 == Changelog ==
+
+= 1.1.0 =
+
+- Added a new parameter to exclude authors from the list.
+- Compatibility check with WordPress 4.6 version.
+- Fixed textdomain path for localization.
+- Added new tags.
+- Updated description.
 
 = 1.0.1 =
 
